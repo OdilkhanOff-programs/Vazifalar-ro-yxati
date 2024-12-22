@@ -16,20 +16,100 @@ button {
 }
 .container .Navbar {
   width: 100%;
-  padding: 20px 0px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.container .Navbar .Nav__text {
-  text-align: center;
-  font-size: 19px;
-  padding: 2px 0px;
-  font-weight: 600;
+.container .Navbar .Nav__Logo h1 span {
+  color: orange;
+}
+.container .Navbar .Nav__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.container .Navbar .Nav__buttons .profile {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #4caf50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .Navbar .Nav__buttons .profile span {
+  color: white;
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+}
+.container .Navbar .Nav__buttons .profile img {
+  width: 20px;
+  height: 20px;
+}
+.container .Navbar .Nav__buttons .profile:hover {
+  background-color: #3e8e42;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.container .Navbar .Nav__buttons .dark-mode {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #4caf50;
+  color: white;
+  background-color: #333;
+}
+.container .Navbar .Nav__buttons .dark-mode:hover {
+  background-color: #555;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 .container #tasks-list .task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 20px;
   border: 1px solid rgb(0, 196, 0);
   width: auto;
   border-radius: 6px;
   margin: 5px 10px;
+}
+.container #tasks-list .task-item span {
+  flex: 1;
+}
+.container #tasks-list .task-item button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+.container #tasks-list .task-item button.task-edit-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+.container #tasks-list .task-item button.task-edit-btn:hover {
+  background-color: #e0a800;
+}
+.container #tasks-list .task-item button.task-delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+.container #tasks-list .task-item button.task-delete-btn:hover {
+  background-color: #c82333;
 }
 .container .menu-item-creator {
   display: flex;
@@ -59,7 +139,63 @@ button {
 .container .menu-item-creator .menu-item-creator__input:focus {
   border: 2px solid #298af0;
 }
+@media (max-width: 800px) {
+  .container .Navbar .Nav__Logo h1 {
+    font-size: 25px;
+  }
+  .container .Navbar .Nav__buttons {
+    gap: 10px;
+  }
+  .container .Navbar .Nav__buttons .profile {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100px;
+    height: 35px;
+  }
+  .container .Navbar .Nav__buttons .profile span {
+    font-size: 15px;
+  }
+  .container .Navbar .Nav__buttons .profile img {
+    width: 20px;
+    height: 20px;
+  }
+  .container .Navbar .Nav__buttons .dark-mode {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+  }
+  .container .task-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .task-item span {
+    margin-bottom: 10px;
+  }
+}
 @media (max-width: 420px) {
+  .container .Navbar .Nav__Logo h1 {
+    font-size: 20px;
+  }
+  .container .Navbar .Nav__buttons .profile {
+    border-radius: 50%;
+    width: 30px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #298af0;
+  }
+  .container .Navbar .Nav__buttons .profile span {
+    display: none;
+  }
+  .container .Navbar .Nav__buttons .dark-mode {
+    width: 50px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .container .menu-item-creator {
     gap: 5px;
   }
